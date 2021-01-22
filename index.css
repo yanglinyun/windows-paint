@@ -1,0 +1,347 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  height: 100vh;
+  background-color: #60add1;
+}
+.dragBox {
+  border: 1px dashed black;
+  position: absolute;
+}
+div {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+.icon_min {
+  height: 14px;
+  width: 14px;
+}
+div {
+  box-sizing: border-box;
+}
+#app {
+  position: absolute;
+  left: 10%;
+  height: 80%;
+  width: 50%;
+  border: 4px solid #D6D3CE;
+  width: 100%;
+}
+#app .title {
+  padding: 1px;
+  color: #ffffff;
+  font-weight: bold;
+  height: 3.01003344%;
+  background-color: #0B2370;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+#app .title .iconfont {
+  color: black;
+}
+#app .title .pageBtn {
+  width: 47px;
+  height: 96%;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+#app .title .pageBtn button {
+  height: 100%;
+  margin-left: -3px;
+  position: relative;
+  bottom: 1px;
+  background-color: #D6D3CE;
+  border-color: #fff;
+}
+#app .title .pageBtn button p {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  bottom: -2px;
+  left: 2px;
+}
+#app .menu {
+  padding: 1px;
+  height: 3.01003344%;
+  padding-left: 2px;
+  font-weight: 550;
+  background-color: #D6D3CE;
+  position: relative;
+}
+#app .menu span {
+  display: inline-block;
+  margin-right: 2%;
+}
+#app .menu .subMenu,
+#app .menu .curMenu {
+  z-index: 999;
+  box-sizing: border-box;
+  padding: 2px;
+  position: absolute;
+  top: 100%;
+  width: 40%;
+  background-color: #fff;
+  display: none;
+  box-shadow: 4px 4px 3px #cccccc;
+  border-radius: 2px;
+}
+#app .menu .subMenu .item,
+#app .menu .curMenu .item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2px 5px 2px 20px;
+  position: relative;
+}
+#app .menu .subMenu .item .menu_item_actived,
+#app .menu .curMenu .item .menu_item_actived {
+  visibility: visible;
+  box-sizing: border-box;
+  width: 20px;
+  text-align: center;
+  padding-top: 3px;
+  height: 90%;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  background-color: #0077C8;
+}
+#app .menu .subMenu .item:hover,
+#app .menu .curMenu .item:hover {
+  background-color: #5774d4;
+}
+#app .menu .subMenu {
+  left: 100%;
+  top: 0;
+  width: 80%;
+}
+#app .menu .colorBox {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  height: 80%;
+  width: 40%;
+  transform: translateY(-50%);
+  overflow: hidden;
+}
+#app .menu .colorBox span {
+  float: right;
+  height: 100%;
+  width: 10%;
+}
+#app .menu .colorBox .eraser {
+  width: auto;
+}
+#app .menu .colorBox [data-color="red"] {
+  background-color: red;
+}
+#app .menu .colorBox [data-color="green"] {
+  background-color: green;
+}
+#app .menu .colorBox [data-color="blue"] {
+  background-color: blue;
+}
+#app .menu .colorBox [data-color="black"] {
+  background-color: black;
+}
+#app .menu .line_weight {
+  height: 100px;
+  overflow-y: auto;
+}
+#app .dialog .item {
+  display: none;
+  position: absolute;
+  background-color: #D6D3CE;
+  border-top: 5px solid #f8f0f0;
+  border-left: 5px solid #b3b0b0;
+  border-bottom: 5px solid #83827f;
+  border-right: 5px solid #83827f;
+  text-align: center;
+  left: 20%;
+  top: 20%;
+}
+#app .dialog .item .title {
+  height: auto;
+}
+#app .dialog .item .title .pageBtn {
+  height: auto;
+  width: auto;
+}
+#app .dialog .help_about {
+  display: none;
+  height: 40%;
+  text-align: center;
+}
+#app .dialog .help_about .logo {
+  font-size: 3em;
+  font-weight: 700;
+  color: #0077C8;
+  margin: 5px;
+  border-bottom: 2px solid #797777;
+}
+#app .dialog .edit_replace,
+#app .dialog .edit_find {
+  background-color: #D6D3CE;
+  display: none;
+}
+#app .dialog .edit_replace .func,
+#app .dialog .edit_find .func {
+  height: 100%;
+}
+#app .dialog .edit_replace .func .funcLeft,
+#app .dialog .edit_find .func .funcLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 5px 5% 10px;
+  float: left;
+  height: 100%;
+  width: 80%;
+}
+#app .dialog .edit_replace .func .funcLeft .search input,
+#app .dialog .edit_find .func .funcLeft .search input {
+  width: 70%;
+}
+#app .dialog .edit_replace .func .funcLeft .options,
+#app .dialog .edit_find .func .funcLeft .options {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+#app .dialog .edit_replace .func .funcLeft fieldset,
+#app .dialog .edit_find .func .funcLeft fieldset {
+  display: inline-block;
+}
+#app .dialog .edit_replace .func .funcRight,
+#app .dialog .edit_find .func .funcRight {
+  padding: 10px 5px 5% 10px;
+  float: left;
+  height: 100%;
+  width: 20%;
+}
+#app .dialog .edit_replace .func .funcRight input,
+#app .dialog .edit_find .func .funcRight input,
+#app .dialog .edit_replace .func button,
+#app .dialog .edit_find .func button {
+  width: 100%;
+  margin-bottom: 10%;
+}
+#app .func {
+  height: 3.01003344%;
+  background-color: #D6D3CE;
+  border-top: 2px solid #f8f0f0;
+  border-left: 2px solid #b3b0b0;
+  border-bottom: 2px solid #83827f;
+  border-right: 2px solid #83827f;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+}
+#app .func span {
+  margin-right: 0.5%;
+  padding-right: 5px;
+}
+#app .func span:nth-child(3n) {
+  border-right: 1px solid #83827f;
+}
+#app .content {
+  padding: 0;
+  height: 89.46488294%;
+  background-color: #D6D3CE;
+  border-top: 5px solid #504f4e;
+  border-left: 5px solid #4d4d4c;
+  border-bottom: 5px solid #fff;
+  border-right: 5px solid #fff;
+  overflow: auto;
+  position: relative;
+}
+#app .content canvas {
+  background-color: #fff;
+}
+#app .earse_mask {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: none;
+  border: 1px solid #000;
+  background-color: honeydew;
+  cursor: move;
+}
+#app .footerInfo {
+  height: 5.01672241%;
+  background-color: #D6D3CE;
+  border-top: 5px solid #504f4e;
+  border-left: 5px solid #4d4d4c;
+  border-bottom: 5px solid #fff;
+  border-right: 5px solid #fff;
+  padding: 2px;
+  display: flex;
+  justify-content: space-between;
+}
+#app .footerInfo > span {
+  margin-right: 1%;
+  padding-left: 5px;
+}
+#app .footerInfo > span:nth-child(n+1) {
+  border-left: 3px solid #504f4e;
+}
+#app .footerInfo .scale_btn {
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+#app .footerInfo .scaleBox {
+  height: 17px;
+  display: inline-block;
+  position: relative;
+}
+#app .footerInfo .scaleBox .scale_bar {
+  display: inline-block;
+  height: 5px;
+  width: 50px;
+  border: 1px solid #504f4e;
+}
+#app .footerInfo .scaleBox .scale_bar .scale_bar_pointer {
+  position: absolute;
+  height: 15px;
+  left: 0;
+  top: 0px;
+  width: 5px;
+  background-color: #0077C8;
+  border: 1px solid #000;
+}
+@media screen and (min-width: 768px) {
+  #app {
+    width: 80%;
+  }
+  #app .dialog .success img {
+    width: 40%;
+    margin-top: 10px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #app {
+    width: 100%;
+    left: 0;
+    height: 100vh;
+  }
+  #app .dialog .success img {
+    width: 40%;
+    margin-top: 10px;
+  }
+}

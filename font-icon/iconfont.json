@@ -1,0 +1,135 @@
+{
+  "id": "2318841",
+  "name": "windows-paint",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "885885",
+      "name": "虚线五角星",
+      "font_class": "xuxianwujiaoxing",
+      "unicode": "e6dc",
+      "unicode_decimal": 59100
+    },
+    {
+      "icon_id": "12746842",
+      "name": "虚线",
+      "font_class": "xuxian",
+      "unicode": "e727",
+      "unicode_decimal": 59175
+    },
+    {
+      "icon_id": "14123819",
+      "name": "画图",
+      "font_class": "paint01",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "1520433",
+      "name": "刷子",
+      "font_class": "shuazi",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "1770864",
+      "name": "字体",
+      "font_class": "ziti",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "1997430",
+      "name": "铅笔",
+      "font_class": "pencil",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "2524278",
+      "name": "放大镜",
+      "font_class": "fangdajing-",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "2893202",
+      "name": "斜线",
+      "font_class": "xiantiao-xiexian1",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "3727601",
+      "name": "喷漆",
+      "font_class": "penqi",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "4926807",
+      "name": "圆角矩形",
+      "font_class": "yuanjiaojuxing",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "6232670",
+      "name": "椭圆",
+      "font_class": "tuoyuan",
+      "unicode": "e671",
+      "unicode_decimal": 58993
+    },
+    {
+      "icon_id": "8238416",
+      "name": "不规则图形",
+      "font_class": "buguizetuxing",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "11097620",
+      "name": "图形",
+      "font_class": "tuxing",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "11920679",
+      "name": "滴管",
+      "font_class": "diguan",
+      "unicode": "e775",
+      "unicode_decimal": 59253
+    },
+    {
+      "icon_id": "13780867",
+      "name": "长方形",
+      "font_class": "changfangxing",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "14777759",
+      "name": "油漆桶",
+      "font_class": "youqitong",
+      "unicode": "e64d",
+      "unicode_decimal": 58957
+    },
+    {
+      "icon_id": "18157197",
+      "name": "橡皮檫",
+      "font_class": "xiangpicha",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "18220647",
+      "name": "曲线",
+      "font_class": "quxian",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    }
+  ]
+}
