@@ -128,6 +128,7 @@ oc.ontouchstart = function (ev) {
   }
   document.ontouchmove = function (ev) {
     var ev = ev || event;
+    ev.preventDefault();//禁止页面滑动
     var contentScroll = {
       top: od.scrollTop,
       left: od.scrollLeft
