@@ -1,5 +1,7 @@
-<<<<<<< HEAD
 # windows-paint[网页仿 windows 画图]
+
+### 演示地址:
+<a href="https://yanglinyun.github.io/windows-paint/."></a>
 
 ### 原版 UI
 
