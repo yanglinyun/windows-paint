@@ -80,7 +80,6 @@ function isOverBorder(borderObj, sonObj, nextL, nextY) {
     t: nextY,
     b: nextY + sonObj.offsetHeight
   };
-  console.log(sonObj.b, borderObj.b)
   //上
   if (sonObj.t < 0) {
     nextY = 0;
@@ -104,35 +103,52 @@ function isOverBorder(borderObj, sonObj, nextL, nextY) {
 var pointer_x = document.getElementById("pointer_x");
 
 var pointer_y = document.getElementById("pointer_y");
-
+// 移动端
 oc.ontouchstart = function (ev) {
   var ev = ev || event;
   var contentScroll = {
     top: od.scrollTop,
     left: od.scrollLeft
   };
-  og.moveTo(
-    ev.changedTouches[0].clientX - oc.offsetLeft - 9 + contentScroll.left,
-    ev.changedTouches[0].clientY - od.offsetTop - 8 + contentScroll.top
-  );
-  pointer_x.innerText = ev.changedTouches[0].clientX - oc.offsetLeft - 9;
-  pointer_y.innerText = ev.changedTouches[0].clientY - od.offsetTop - 8;
+  og.beginPath(); //这样才能不整体换颜色
+  var og_x = ev.changedTouches[0].clientX - oc.offsetLeft - 9 + contentScroll.left;
+  var og_y = ev.changedTouches[0].clientY - od.offsetTop - 8 + contentScroll.top;
+  og.moveTo(og_x, og_y);
+  
+  if (ioStatus == "earser") {
+    earse_mask.style.display = "block";
+    earse_mask.style.width = earse_size + "px";
+    earse_mask.style.height = earse_size + "px";
+    var nextL = og_x - earse_size / 2;
+    var nextR = og_y - earse_size / 2;
+    isOverBorder(od, earse_mask, nextL, nextR);
+    //判断是否越界
+  } else {
+    earse_mask.style.display = "none";
+  }
   document.ontouchmove = function (ev) {
     var ev = ev || event;
     var contentScroll = {
       top: od.scrollTop,
       left: od.scrollLeft
     };
-    og.lineTo(
-      ev.changedTouches[0].clientX - oc.offsetLeft - 9 + contentScroll.left,
-      ev.changedTouches[0].clientY - od.offsetTop - 8 + contentScroll.top
-    );
-    pointer_x.innerText = ev.changedTouches[0].clientX - oc.offsetLeft - 9;
-    pointer_y.innerText = ev.changedTouches[0].clientY - od.offsetTop - 8;
-    og.stroke();
+    var og_x = ev.changedTouches[0].clientX - oc.offsetLeft - 9 + contentScroll.left;
+    var og_y = ev.changedTouches[0].clientY - od.offsetTop - 8 + contentScroll.top;
+    if (ioStatus == "print") {
+      og.lineTo(og_x, og_y);
+      og.stroke();
+    } else {
+      og.fillStyle = "#fff";
+      var nextL = og_x - earse_size / 2;
+      var nextR = og_y - earse_size / 2;
+      //判断是否越界
+      isOverBorder(od, earse_mask, nextL, nextR);
+      og.fillRect(og_x - earse_size / 2, og_y - earse_size / 2, earse_size, earse_size);
+
+    }
   };
 
   document.ontouchend = function () {
-    document.ontouchdown = document.ontouchmove = null;
+    document.onmousedown = document.onmousemove = null;
   };
 };
